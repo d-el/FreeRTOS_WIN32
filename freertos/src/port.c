@@ -123,7 +123,7 @@ static uint32_t prvProcessTickInterrupt( void );
  * Called when the process exits to let Windows know the high timer resolution
  * is no longer required.
  */
-static BOOL WINAPI prvEndProcess( DWORD dwCtrlType );
+BOOL WINAPI prvEndProcess( DWORD dwCtrlType );
 
 /*-----------------------------------------------------------*/
 
@@ -176,7 +176,7 @@ static BaseType_t xPortRunning = pdFALSE;
 
 static DWORD WINAPI prvSimulatedPeripheralTimer( LPVOID lpParameter )
 {
-TickType_t xMinimumWindowsBlockTime;
+TickType_t xMinimumWindowsBlockTime = 0;
 //FREEDEL// TIMECAPS xTimeCaps;
 
 //FREEDEL//

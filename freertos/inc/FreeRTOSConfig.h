@@ -71,7 +71,7 @@ functions anyway. */
 /* It is a good idea to define configASSERT() while developing.  configASSERT()
 uses the same semantics as the standard C assert() macro. */
 extern void vAssertCalled( unsigned long ulLine, const char * const pcFileName );
-#define configASSERT( x ) if( ( x ) == 0 ) //vAssertCalled( __LINE__, __FILE__ )
+#define configASSERT( x ) if( ( x ) == 0 ) (void)0;//vAssertCalled( __LINE__, __FILE__ )
 
 /* Include the FreeRTOS+Trace FreeRTOS trace macro definitions. */
 #define TRACE_ENTER_CRITICAL_SECTION() portENTER_CRITICAL()
